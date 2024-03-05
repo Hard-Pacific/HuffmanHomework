@@ -77,8 +77,15 @@ namespace HuffmanTest
 
             for (int i = 0; i < source.Length; i++)
             {
-                List<bool> encodedSymbol = this.Root.Traverse(source[i], new List<bool>());
-                encodedSource.AddRange(encodedSymbol);
+                if (this.Root != null)
+                {
+                    List<bool> encodedSymbol = this.Root.Traverse(source[i], new List<bool>());
+                    encodedSource.AddRange(encodedSymbol);
+                }
+                else
+                {
+                    encodedSource.Add(false);
+                }
             }
 
             BitArray bits = new BitArray(encodedSource.ToArray());
