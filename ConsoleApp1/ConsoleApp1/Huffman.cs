@@ -15,7 +15,7 @@ namespace HuffmanTest
         /// <summary>
         /// The root of the Huffman tree.
         /// </summary>
-        public Node Root { get; set; }
+        public Node? Root { get; set; }
         /// <summary>
         /// The frequency of characters in the source string.
         /// </summary>
