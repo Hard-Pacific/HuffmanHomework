@@ -24,7 +24,7 @@ namespace HuffmanTest
         /// <param name="symbol">The desired symbol.</param>
         /// <param name="data">The path to the symbol (a list of Boolean values).</param>
         /// <returns>The path to the symbol in the form of a list of Boolean values.</returns>
-        public List<bool> Traverse(char symbol, List<bool> data)
+        public List<bool>? Traverse(char symbol, List<bool> data)
         {
             // Leaf
             if (Right == null && Left == null)
@@ -40,8 +40,8 @@ namespace HuffmanTest
             }
             else
             {
-                List<bool> left = null;
-                List<bool> right = null;
+                List<bool>? left = null;
+                List<bool>? right = null;
 
                 if (Left != null)
                 {
