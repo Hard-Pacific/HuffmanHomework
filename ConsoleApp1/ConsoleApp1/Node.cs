@@ -15,8 +15,8 @@ namespace HuffmanTest
         /// </summary>
         public char Symbol { get; set; }
         public int Frequency { get; set; }
-        public Node Right { get; set; }
-        public Node Left { get; set; }
+        public Node? Right { get; set; }
+        public Node? Left { get; set; }
 
         /// <summary>
         /// A recursive method for traversing the Huffman tree and searching for a symbol.
@@ -35,7 +35,7 @@ namespace HuffmanTest
                 }
                 else
                 {
-                    return null;
+                    return null!;
                 }
             }
             else

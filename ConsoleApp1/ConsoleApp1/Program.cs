@@ -11,7 +11,8 @@ namespace HuffmanTest
         static void Main(string[] args)
         {
             Console.WriteLine("Our string: ");
-            string input = Console.ReadLine();
+            string input = Console.ReadLine() ?? "";
+
             HuffmanTree huffmanTree = new HuffmanTree();
             huffmanTree.Build(input);
 
