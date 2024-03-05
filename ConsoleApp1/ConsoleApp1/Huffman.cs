@@ -99,7 +99,7 @@ namespace HuffmanTest
         /// <returns>The decoded source string.</returns>
         public string Decode(BitArray bits)
         {
-            Node current = this.Root;
+            Node current = this.Root ?? throw new InvalidOperationException("Root node is null");
             string decoded = "";
 
             foreach (bool bit in bits)
@@ -122,7 +122,7 @@ namespace HuffmanTest
                 if (IsLeaf(current))
                 {
                     decoded += current.Symbol;
-                    current = this.Root;
+                    current = this.Root ?? throw new InvalidOperationException("Root node is null");
                 }
             }
 
