@@ -74,12 +74,13 @@ namespace HuffmanTest
         public BitArray Encode(string source)
         {
             List<bool> encodedSource = new List<bool>();
-
             for (int i = 0; i < source.Length; i++)
             {
                 if (this.Root != null)
                 {
-                    List<bool> encodedSymbol = this.Root.Traverse(source[i], new List<bool>());
+                    List<bool>? encodedSymbol = this.Root.Traverse(source[i], new List<bool>());
+                    if (encodedSymbol == null)
+                        throw new InvalidOperationException("Root node is null");
                     encodedSource.AddRange(encodedSymbol);
                 }
                 else
@@ -87,7 +88,6 @@ namespace HuffmanTest
                     encodedSource.Add(false);
                 }
             }
-
             BitArray bits = new BitArray(encodedSource.ToArray());
 
             return bits;
